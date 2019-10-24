@@ -1,0 +1,28 @@
+class Loop{
+public static void main(String args[]){
+int a;
+System.out.println("For loop");
+for(a=1;a<=20;++a)
+{
+System.out.print(a);
+}
+System.out.println();
+System.out.println("While loop");
+a=1;
+while(a<=20)
+{
+System.out.print(a);
+++a;
+}
+System.out.println();
+System.out.println("Do-while loop");
+a=1;
+do
+{
+System.out.print(a);
+++a;
+3
+}while(a<=20);
+System.out.println();
+}
+}
