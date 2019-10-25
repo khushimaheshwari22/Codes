@@ -1,0 +1,51 @@
+class Matrix{
+public static void main(String args[]){
+inti,j,k;
+int sum;
+int a[][]={
+{1,2,3},
+{3,4,5},
+{6,7,8},
+ };
+int b[][]={
+{1,1,1},
+{2,2,2},
+{3,3,3},
+ };
+System.out.println(" The first matrix elements:");
+for(i=0;i<3;++i)
+{
+System.out.println();
+for(j=0;j<3;++j)
+{
+System.out.print(" "+a[i][j]);
+}
+}
+15
+System.out.println();
+System.out.println(" The second matrix elements:");
+for(i=0;i<3;++i)
+{
+System.out.println();
+for(j=0;j<3;++j)
+{
+System.out.print(" "+b[i][j]);
+}
+}
+System.out.println();
+System.out.println(" The Multiplication of Matrix is:");
+for(i=0;i<3;++i)
+{
+System.out.println();
+for(j=0;j<3;++j)
+{
+sum=0;
+for(k=0;k<3;++k)
+{
+sum=sum+a[i][k]*b[k][j];
+}
+System.out.print(" "+sum);
+}
+}
+}
+}
