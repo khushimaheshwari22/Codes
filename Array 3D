@@ -1,0 +1,68 @@
+class Array{
+public static void main(String args[]){
+inti,j,k;
+int a[][][]={
+ {
+{1,2},
+{3,4},
+ },
+ {
+{5,6},
+{7,8},
+ }
+ };
+int b[][][]={
+ {
+{1,1},
+{2,2},
+ },
+ {
+{3,3},
+{4,4},
+ }
+ };
+System.out.println(" The first array elements:");
+12
+for(i=0;i<2;++i)
+{
+System.out.println();
+for(j=0;j<2;++j)
+{
+System.out.println();
+for(k=0;k<2;++k)
+{
+System.out.print(" "+a[i][j][k]);
+}
+}
+}
+System.out.println();
+System.out.println(" The second array elements:");
+for(i=0;i<2;++i)
+{
+System.out.println();
+for(j=0;j<2;++j)
+{
+System.out.println();
+for(k=0;k<2;++k)
+{
+System.out.print(" "+b[i][j][k]);
+}
+}
+}
+System.out.println();
+13
+System.out.println(" The sum of two array is:");
+for(i=0;i<2;++i)
+{
+System.out.println();
+for(j=0;j<2;++j)
+{
+System.out.println();
+for(k=0;k<2;++k)
+{
+System.out.print(" "+(a[i][j][k]+b[i][j][k]));
+}
+}
+}
+}
+}
