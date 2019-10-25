@@ -1,0 +1,16 @@
+class Check{
+public static void main(String args[]){
+double f=1;
+int n=Integer.parseInt(args[0]);
+if(n%2==0)
+System.out.println(" The number is even");
+else
+System.out.println(" The number is odd");
+while(n>=1)
+{
+f=f*n;
+n=n-1;
+}
+System.out.println(" The factorial is"+f);
+}
+}
