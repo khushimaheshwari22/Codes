@@ -1,0 +1,60 @@
+classBankacct{
+intacno;
+String name;
+String acctype;
+floatbal;
+Bankacct(inta,Stringn,Stringat,float b)
+{
+acno=a;
+name=n;
+acctype=at;
+bal=b;
+}
+void deposit(float d)
+{
+bal=bal+d;
+System.out.println(" Amount is deposited.");
+System.out.println(" Amount is:" +bal);
+}
+void withdraw(float w)
+{
+if(w<bal)
+{
+bal=bal-w;
+System.out.println(" Amount is withdrawn.");
+24
+System.out.println(" Amount is:" +bal);
+}
+else
+{
+System.out.println(" Insufficient Balance.");
+}
+}
+void display(inta,Stringn,Stringat,float b)
+ {
+System.out.println(" Name of the depositor:" +name);
+System.out.println(" Account no:" +acno);
+System.out.println(" Account type:" +acctype);
+System.out.println(" Balance:" +bal);
+ }
+}
+class Acct{
+public static void main(String args[]){
+Bankacct customer1=new Bankacct(1001,"Priya","Current",1000);
+Bankacct customer2=new Bankacct(1002,"Shreya","Saving",2000);
+Bankacct customer3=new Bankacct(1003,"Apoorva","Saving",3000);
+customer1.display(1001,"Priya","Current",1000);
+ customer1.deposit (5000);
+ customer1.withdraw (2000);
+System.out.println();
+customer2.display(1002,"Shreya","Saving",2000);
+ customer2.deposit (10000);
+ customer2.withdraw (5000);
+25
+System.out.println();
+customer3.display(1003,"Apoorva","Saving",3000);
+ customer3.deposit (7000);
+ customer3.withdraw (3000);
+System.out.println();
+}
+}
