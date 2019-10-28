@@ -1,0 +1,38 @@
+class Shape{
+void area(int l)
+{
+System.out.println(" Square:");
+System.out.println(" Length:" +l);
+System.out.println(" Area:" +(l*l));
+}
+void area(intl,int b)
+{
+System.out.println(" Rectangle:");
+System.out.println(" Length:" +l);
+System.out.println(" Breadth:" +b);
+System.out.println(" Area:" +(l*b));
+}
+void area(double r)
+{
+System.out.println(" Circle:");
+27
+System.out.println(" Radius:" +r);
+System.out.println(" Area:" +(3.14*r*r));
+}
+void area(double p,double b)
+{
+System.out.println(" Triangle:");
+System.out.println(" Perpendicular:" +p);
+System.out.println(" Base:" +b);
+System.out.println(" Area:" +((p*b)/2));
+}
+}
+classCalc{
+public static void main(String args[]){
+Shape a1=new Shape();
+a1.area(12);
+a1.area(3,4);
+a1.area(3.4);
+a1.area(3.4,1.2);
+}
+}
