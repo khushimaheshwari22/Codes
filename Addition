@@ -1,0 +1,22 @@
+class Digit{
+public static void main(String args[]){
+System.out.println(" Number:" +args[0]);
+int n=Integer.parseInt(args[0]);
+int a=0;
+if(n<=0)
+{
+System.out.println(" Enter a valid number!");
+}
+else
+{
+int sum=0;
+while(n!=0)
+{
+a=n%10;
+n=n/10;
+sum=sum+a;
+}
+System.out.println(" "+sum);
+}
+}
+}
