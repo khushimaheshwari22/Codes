@@ -1,0 +1,28 @@
+class Ct{
+staticint count=0;
+static void create()
+{
+count=count+1;
+}
+static void display()
+{
+System.out.println(" The number of objects created are:"+count);
+}
+}
+class Name{
+public static void main(String args[]){
+Ct c1=new Ct();
+Ct.create();
+Ct.display();
+Ct c2=new Ct();
+Ct c3=new Ct();
+Ct.create();
+Ct.display();
+33
+Ct c4=new Ct();
+Ct c5=new Ct();
+Ct c6=new Ct();
+Ct.create();
+Ct.display();
+}
+}
