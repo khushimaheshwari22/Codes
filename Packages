@@ -1,0 +1,29 @@
+package pkg;
+class Greatest{
+inta,b;
+Greatest(intx,int y)
+{
+a=x;
+b=y;
+}
+int big()
+{
+if(a>b)
+return (a);
+else if(a<b)
+return (b);
+else
+return -1;
+}
+}
+class Great{
+public static void main(String args[]){
+Greatest g1=new Greatest(10,20);
+int n=g1.big();
+56
+if(n!=-1)
+System.out.println("The larger value among them is" +n);
+else
+System.out.println("The values are equal");
+}
+}
