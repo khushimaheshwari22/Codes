@@ -1,0 +1,30 @@
+class Compare{
+public static void main(String args[]){
+System.out.println(" Name:" +args[0]);
+System.out.println(" Friend's Name:" +args[1]);
+String ab=args[0];
+String bc=args[1];
+if(args[0].equals(args[1]))
+System.out.println(" Names are equal!");
+else
+System.out.println(" Names are not equal!");
+for(int i=0;i<ab.length();++i)
+{
+if(ab.charAt(i)=='a'|ab.charAt(i)=='A'|ab.charAt(i)=='e'|ab.charAt(i)=='i'|ab.charAt(i)=='o'|ab.
+charAt(i)=='u'|ab.charAt(i)=='E'|ab.charAt(i)=='I'|ab.charAt(i)=='O'|ab.charAt(i)=='U')
+{
+System.out.print(" "+ab.charAt(i));
+}
+}
+System.out.println();
+for(int i=0;i<bc.length();++i)
+{
+if(bc.charAt(i)=='a'|bc.charAt(i)=='A'|bc.charAt(i)=='e'|bc.charAt(i)=='i'|bc.charAt(i)=='o'|bc.
+charAt(i)=='u'|bc.charAt(i)=='E'|bc.charAt(i)=='I'|bc.charAt(i)=='O'|bc.charAt(i)=='U')
+40
+{
+System.out.print(" "+bc.charAt(i));
+}
+}
+}
+} 
