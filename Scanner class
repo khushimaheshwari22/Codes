@@ -1,0 +1,31 @@
+importjava.util.Scanner;
+classSca{
+public static void main(String args[]){
+ // Declare the object and initialize with
+ // predefined standard input object
+ Scanner sc = new Scanner(System.in);
+// String input
+System.out.println("Type Name:");
+ String name = sc.nextLine();
+ // Character input
+System.out.println("Type Gender M/F:");
+char gender = sc.next().charAt(0);
+ // Numerical data input
+ // byte, short and float can be read
+ // using similar-named functions.
+System.out.println("Type Age:");
+int age = sc.nextInt();
+System.out.println("Type Mob.No.:");
+longmobileNo = sc.nextLong();
+System.out.println("Type CGPA:");
+doublecgpa = sc.nextDouble();
+System.out.println("\n\nHere are the details:\n");
+38
+ // Print the values to check if input was correctly obtained.
+System.out.println("Name: "+name);
+System.out.println("Gender: "+gender);
+System.out.println("Age: "+age);
+System.out.println("Mobile Number: "+mobileNo);
+System.out.println("CGPA: "+cgpa);
+ }
+}
