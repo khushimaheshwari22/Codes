@@ -1,0 +1,37 @@
+class MyException extends Exception{
+private String s;
+MyException(){
+s="User Defined Exception";
+}
+public String toString(){
+return"MyException["+s+"]";
+}
+}
+class Exp{
+public static void main(String args[]){
+try{
+String a1=args[0];
+68
+if(a1.equals("UE"))
+{
+throw new NullPointerException("");
+}
+else if(a1.equals("CE"))
+{
+throw new IllegalAccessException("");
+}
+else{
+throw new MyException();
+}
+}
+catch(NullPointerException e){
+System.out.println("Null Pointer Exception:"+e);
+}
+catch(IllegalAccessException e){
+System.out.println("Illegal Access Exception:"+e);
+}
+catch(MyException e){
+System.out.println("Caught:"+e);
+}
+}
+}
