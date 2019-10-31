@@ -1,0 +1,29 @@
+interface I1 {
+void sum(inta,int b);
+}
+interface I2 {
+void product(inta,int b);
+}
+class Arithmetic implements I1,I2{
+public void sum(inta,int b){
+int p;
+p=a+b;
+System.out.println("Sum is" + p);
+}
+public void product(inta,int b){
+int p;
+p=a*b;
+System.out.println("Product is" + p);
+}
+}
+classTestIface {
+public static void main(String args[]) {
+int n1,n2;
+62
+n1=Integer.parseInt(args[0]);
+n2=Integer.parseInt(args[1]);
+Arithmetic a1= new Arithmetic();
+a1.sum(n1,n2);
+a1.product(n1,n2);
+}
+}
