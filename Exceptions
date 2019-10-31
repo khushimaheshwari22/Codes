@@ -1,0 +1,27 @@
+classMultipleCatches{
+public static void main(String args[]){
+try{
+String a1=args[0];
+int a=args.length;
+int b;
+System.out.println("a:"+a);
+if(a1.equals("AE")){
+b=a/0;}
+else if(a1.equals("AIOOBE")){
+int c[]={1};
+c[42]=99;
+}
+else{
+System.out.println("ALL IS WELL");
+}
+}
+catch(ArithmeticException e){
+64
+System.out.println("Divide by 0:"+e);
+}
+catch(ArrayIndexOutOfBoundsException e){
+System.out.println("Array Index out of bound:"+e);
+}
+System.out.println("Don't Worry be happy");
+}
+}
