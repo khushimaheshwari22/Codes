@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{   clrscr();
+ int n,i,j;
+ int amin[20],asec[20],dmin[20],dsec[20],p[20];
+ printf("Enter number of trains:");
+ scanf("%d",&n);
+ for(i=0;i<n;i++)
+ {
+   printf("Enter arrival time:");
+   scanf("%d %d",&amin[i],&asec[i]);
+   printf("Enter departure time:");
+   scanf("%d %d",&dmin[i],&dsec[i]);
+   p[i]=0;
+
+ }
+ p[0]=0;
+ int k=0,d;
+ for(i=1;i<n;i++)
+ {
+   d=k;
+   while(d>=0)
+   {
+      if(amin[i]<dmin[p[d]])
+      {
+
+		 d=d-1;
+      }
+      else if(amin[i]==dmin[p[d]])
+      {
+	   if(asec[i]<=dsec[p[d]])
+	   {
+	      d=d-1;
+	   }
+	   else
+      {
+	   p[d]=i;
+	   break;  }
+      }
+      else
+      {
+      p[d]=i;
+      break;  }
+   }
+   if(d<0)
+   {
+   k=k+1;
+   p[k]=i;
+   }
+ }
+ printf("\nMinimum Number of platforms required is :");
+ printf("%d",k+1);
+ getch();
+
+}
