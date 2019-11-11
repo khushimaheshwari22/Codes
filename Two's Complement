@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+#define NULL 0
+struct node
+{
+int data;
+struct node *pre;
+struct node *next;
+}*start=NULL,*newnode=NULL,*temp=NULL;
+void main()
+{
+clrscr();
+int len;
+printf("\nEnter length of binary number");
+scanf("%d",&len);
+printf("\nEnter binary number whose 2's complement is to be calculated:");
+while(len>=1)
+{
+newnode=(struct node*)malloc(sizeof(*start));
+newnode->pre=NULL;
+newnode->next=NULL;
+scanf("%d",&newnode->data);
+if(start==NULL)
+{
+start=newnode;
+}
+else
+{
+temp=start;
+while(temp->next!=NULL)
+{
+temp=temp->next;
+}
+temp->next=newnode;
+newnode->pre=temp;
+}
+len--;
+}
+//*********************
+temp=start;
+while(temp->next!=NULL)
+{
+temp=temp->next;
+}
+while(temp->data!=1)
+{
+temp=temp->pre;
+}
+temp=temp->pre;
+while(temp!=NULL)
+{
+if(temp->data==1)
+temp->data=0;
+else
+temp->data=1;
+temp=temp->pre;
+}
+//******************
+printf("\nTwo's complement of number is:");
+temp=start;
+while(temp!=NULL)
+{
+printf("%d",temp->data);
+temp=temp->next;
+}
+getch();
+}
