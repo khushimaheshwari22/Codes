@@ -1,0 +1,81 @@
+#include<iostream.h>
+#include<stdio.h>
+#include<time.h>
+#include<conio.h>
+#include<dos.h>
+#include<process.h>
+void main()
+{
+clrscr();
+long int x,first,last,mid,pos;
+long int no;
+long int n;
+int count;
+int ch;
+double diff1,diff2;
+time_t beg1,end1,beg2,end2;
+count=0;
+printf("\nEnter the value of n:");
+scanf("%ld",&n);
+for(x=1;x<=n;++x)
+printf("%ld\t",x);
+while(1)
+{
+printf("\n1.Linear Search 2.Binary search 3.Exit\nEnter your choice:");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: printf("\nEnter no to be searched for:");
+	scanf("%ld",&no);
+	beg1=clock();
+	for(x=1;x<=n;++x)
+	{
+	delay(5);
+	if(x==no)
+	{
+	count=1;
+	break;
+	}
+	}
+	if(count==1)
+	printf("\nno found..");
+	else
+	printf("\n not found..");
+	end1=clock();
+	diff1=(double)(end1-beg1)/CLOCKS_PER_SEC;
+	printf("\nTime taken for linear search:%lf",diff1);
+	break;
+case 2: printf("\nEnter no to be searched for:");
+	scanf("%ld",&no);
+	beg2=clock();
+	first=1;
+	last=n;
+	while(first<last)
+	{
+	delay(5);
+	mid=(first+last)/2;
+	if(x==no)
+	pos=mid;
+	else if(no>x)
+	first=mid+1;
+	else if(no<x)
+	last=mid-1;
+	else
+	pos=0;
+	}
+	if(pos==0)
+	printf("\nno not found..");
+	else
+	printf("\n no found..");
+	end2=clock();
+	diff2=(double)(end2-beg2)/CLOCKS_PER_SEC;
+	printf("\nTime taken for binary search:%lf",diff2);
+	break;
+case 3: exit(0);
+	break;
+default:printf("\nEnter a valid choice!!");
+	break;
+}
+}
+getch();
+}
