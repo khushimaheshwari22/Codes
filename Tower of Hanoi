@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<conio.h>
+int count=0;
+void tower(int,char,char,char);
+void main()
+{
+clrscr();
+int num;
+printf("\nEnter number of disks:");
+scanf("%d",&num);
+tower(num,'A','B','C');
+getch();
+}
+void tower(int n,char beg,char aux,char end)
+{
+if(n==0)
+return;
+tower(n-1,beg,end,aux);
+printf("\nMove %d : %c->%c",++count,beg,end);
+tower(n-1,aux,beg,end);
+}
