@@ -1,0 +1,102 @@
+#include<iostream.h>
+#include<conio.h>
+class am
+{
+protected:
+float ec;
+};
+class tw:public am
+{
+char b[20];
+float avg;
+char t[20];
+public:
+void get1()
+{
+cout<<"\nEnter brand:";
+cin>>b;
+cout<<"\nEnter Average:";
+cin>>avg;
+cout<<"\nEnter type of vehicle:";
+cin>>t;
+cout<<"\nEnter engine capacity:";
+cin>>ec;
+}
+void display1()
+{
+cout<<"\nDETAILS ARE:";
+cout<<"\nBrand:"<<b<<"\n";
+cout<<"\nAverage:"<<avg<<"\n";
+cout<<"\nType:"<<t<<"\n";
+cout<<"\nEngine capacity:"<<ec<<"\n";
+}
+};
+class fw:public am
+{
+char b1[20];
+float avg1;
+float p;
+public:
+void get2()
+{
+cout<<"\nEnter brand:";
+cin>>b1;
+cout<<"\nEnter Average:";
+cin>>avg1;
+cout<<"\nEnter Price:";
+cin>>p;
+cout<<"\nEnter engine capacity:";
+cin>>ec;
+}
+void display2()
+{
+cout<<"\nDETAILS ARE:";
+cout<<"\nBrand:"<<b1<<"\n";
+cout<<"\nAverage:"<<avg1<<"\n";
+cout<<"\nPrice:"<<p<<"\n";
+cout<<"\nEngine capacity:"<<ec<<"\n";
+}
+};
+class heavy:public am
+{
+char t1[20];
+float p1;
+public:
+void get3()
+{
+cout<<"\nEnter type of vehicle:";
+cin>>t1;
+cout<<"\nEnter Price:";
+cin>>p1;
+cout<<"\nEnter engine capacity:";
+cin>>ec;
+}
+void display3()
+{
+cout<<"\nDETAILS ARE:";
+cout<<"\nType of vehicle:"<<t1<<"\n";
+cout<<"\nPrice:"<<p1<<"\n";
+cout<<"\nEngine capacity:"<<ec<<"\n";
+}
+};
+
+void main()
+{
+clrscr();
+cout<<"\nFor two wheeler:\n";
+tw o1;
+o1.get1();
+o1.display1();
+cout<<"\n*****************************\n";
+cout<<"\nFor four wheeler:\n";
+fw o2;
+o2.get2();
+o2.display2();
+cout<<"\n*****************************\n";
+cout<<"\nFor heavy vehicles:\n";
+heavy o3;
+o3.get3();
+o3.display3();
+cout<<"\n******************************\n";
+getch();
+}
