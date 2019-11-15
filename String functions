@@ -1,0 +1,584 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<process.h>
+#include<ctype.h>
+class string_func
+{
+char str1[50],str2[50];
+public:
+void menu();
+void str_len();   //1
+void str_cpy();   //2
+void str_cat();   //3
+void str_cmp();   //4
+void str_rev();   //5
+void str_chr();   //6
+void str_str();   //7
+void str_lwr();   //8
+void str_upr();   //9
+void str_set();   //10
+void str_spn();   //11
+void str_dup();   //12
+void str_cmpi();  //13
+void str_ncpy();  //14
+void str_ncat();  //15
+void str_rchr();  //16
+void str_nset();  //17
+void str_ncmp();  //18
+void str_rstr();  //19
+void mem_cpy();   //20
+}s1;
+int i,j;
+void main()
+{
+clrscr();
+int ch;
+while(1)
+{
+clrscr();
+s1.menu();
+cout<<"\nEnter your choice:";
+cin>>ch;
+switch(ch)
+{
+case 1: s1.str_len();
+	break;
+case 2: s1.str_cpy();
+	break;
+case 3: s1.str_cat();
+	break;
+case 4: s1.str_cmp();
+	break;
+case 5: s1.str_rev();
+	break;
+case 6: s1.str_chr();
+	break;
+case 7: s1.str_str();
+	break;
+case 8: s1.str_lwr();
+	break;
+case 9: s1.str_upr();
+	break;
+case 10:s1.str_set();
+	break;
+case 11:s1.str_spn();
+	break;
+case 12:s1.str_dup();
+	break;
+case 13:s1.str_cmpi();
+	break;
+case 14:s1.str_ncpy();
+	break;
+case 15:s1.str_ncat();
+	break;
+case 16:s1.str_rchr();
+	break;
+case 17:s1.str_nset();
+	break;
+case 18:s1.str_ncmp();
+	break;
+case 19:s1.str_rstr();
+	break;
+case 20:s1.mem_cpy();
+	break;
+case 21:exit(0);
+	break;
+default:cout<<"\nEnter a valid choice!!";
+}
+}
+getch();
+}
+//**********************
+void string_func::menu()
+{
+cout<<"\nThe available options are:";
+cout<<"\n1.strlen() [String length]";
+cout<<"\n2.strcpy() [Copy one string to another]";
+cout<<"\n3.strcat() [String concatenation]";
+cout<<"\n4.strcmp() [Comparision of string using case]";
+cout<<"\n5.strrev() [Reverse of a string]";
+cout<<"\n6.strchr() [Search a character in a string]";
+cout<<"\n7.strstr() [Search a substring in a string]";
+cout<<"\n8.strlwr() [Convert string into lowercase]";
+cout<<"\n9.strupr() [Convert string into uppercase]";
+cout<<"\n10.strset() [Replace all character in a string with one specific character]";
+cout<<"\n11.strspn() [Search substring and display upto how many places it matches]";
+cout<<"\n12.strdup() [Duplicate a string]";
+cout<<"\n13.strcmpi() [Comparision of string without using case]";
+cout<<"\n14.strncpy() [Copy one string to another upto given length]";
+cout<<"\n15.strncat() [Concatenate one string into another upto length n]";
+cout<<"\n16.strrchr() [Searches the last occurence of character in the string]";
+cout<<"\n17.strnset() [Replaces n character in a string with one specific character";
+cout<<"\n18.strncmp() [Comparision of first n characters of string]";
+cout<<"\n19.strrstr() [Search the last occurence of a substring in a string]";
+cout<<"\n20.memcpy() [Copies data from one memory location to another]";
+cout<<"\n21.Exit";
+}
+//*********************************
+void string_func::str_len()
+{
+cout<<"\nEnter string:";
+gets(str1);
+for(i=0;str1[i]!='\0';++i);
+cout<<"\nThe length of the given string is:"<<i;
+getch();
+}
+//**********************
+void string_func::str_cpy()
+{
+cout<<"\nEnter a string you want to copy:";
+gets(str1);
+for(i=0;str1[i]!='\0';++i)
+{
+str2[i]=str1[i];
+}
+cout<<"\nThe original string is ";
+puts(str1);
+cout<<"\nThe copied string is ";
+puts(str2);
+getch();
+}
+//**************************
+void string_func::str_cat()
+{
+cout<<"\nEnter string 1:";
+gets(str1);
+cout<<"\nEnter string 2:";
+gets(str2);
+for(i=0;str1[i]!='\0';++i);
+for(j=0;str2[j]!='\0';++j)
+{
+str1[i]=str2[j];
+++i;
+}
+cout<<"\nAfter concatenation the string is ";
+puts(str1);
+getch();
+}
+//****************************
+void string_func::str_cmp()
+{
+int flag;
+cout<<"\nEnter string 1:";
+gets(str1);
+cout<<"\nEnter string 2:";
+gets(str2);
+for(i=0;str1[i]!='\0';++i);
+for(j=0;str2[j]!='\0';++j);
+if(i==j)
+{
+for(i=0;str1[i]!='\0';++i)
+{
+if(str1[i]==str2[i])
+{
+flag=1;
+}
+else
+{
+flag=0;
+break;
+}
+}
+if(flag==1)
+cout<<"\nStrings are equal!!";
+else
+cout<<"\nStrings are not equal!!";
+}
+else if(i>j)
+cout<<"\nStrings are not equal!!\nString 1 is larger..";
+else
+cout<<"\nStrings are not equal!!\nString 2 is larger..";
+getch();
+}
+//******************************
+void string_func::str_rev()
+{
+int len;
+cout<<"\nEnter string:";
+gets(str1);
+for(i=0;str1[i]!='\0';++i);
+len=i-1;
+for(j=0;j<i;++j)
+{
+str2[j]=str1[len];
+len--;
+}
+str2[j]='\0';
+cout<<"\nThe reversed string is ";
+puts(str2);
+getch();
+}
+//******************************
+void string_func::str_chr()
+{
+char c;
+int flag=0;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nEnter character to be searched for:";
+cin>>c;
+for(i=0;str1[i]!='\0';++i)
+{
+if(str1[i]==c)
+{
+flag=1;
+break;
+}
+}
+if(flag==1)
+cout<<"\nCharacter found in the string at position "<<i+1;
+else
+cout<<"\nCharacter not found in the string!!";
+getch();
+}
+//*****************************
+void string_func::str_str()
+{
+int c=0;
+int len;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nEnter substring:";
+gets(str2);
+for(i=0;str2[i]!='\0';++i);
+len=i-1;
+i=0;j=0;
+while(str1[i]!='\0')
+{
+if(str1[i]!=str2[j])
+i++;
+else if(str1[i]==str2[j])
+{
+while(str2[j]!='\0')
+{
+if(str1[i]==str2[j])
+{
+i++;
+j++;
+c++;
+}
+else
+{
+c=0;
+break;
+}
+}
+}
+}
+if(c!=0)
+cout<<"\nSubstring found!!";
+else
+cout<<"\nSubstring not found!!";
+getch();
+}
+//**********************************
+void string_func::str_lwr()
+{
+int l;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nString in lowercase is:\n";
+for(i=0;str1[i]!='\0';++i)
+{
+if(str1[i]==' ')
+{
+cout<<" ";
+}
+else
+{
+l=str1[i]+32;
+cout<<(char)l;
+}
+}
+getch();
+}
+//*********************************
+void string_func::str_upr()
+{
+int l;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nString in uppercase is:\n";
+for(i=0;str1[i]!='\0';++i)
+{
+if(str1[i]==' ')
+{
+cout<<" ";
+}
+else
+{
+l=str1[i]-32;
+cout<<(char)l;
+}
+}
+getch();
+}
+//***************************************
+void string_func::str_set()
+{
+char r;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nEnter specific character:";
+cin>>r;
+for(i=0;str1[i]!='\0';++i)
+{
+str1[i]=r;
+}
+cout<<"\nCharacter replaced!\n";
+cout<<"\nModified string is : ";
+puts(str1);
+getch();
+}
+//************************************
+void string_func::str_spn()
+{
+int len;
+int count=0;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nEnter substring:";
+gets(str2);
+for(j=0,i=0;str2[j]!='\0';++j)
+{
+if(str1[i]==str2[j])
+{
+i++;
+count=count+1;
+}
+else
+{
+break;
+}
+}
+if(count!=0)
+cout<<"\nSubstring mathched upto "<<count<<" places";
+else
+cout<<"\nSubstring not found!!";
+getch();
+}
+//*************************
+void string_func::str_dup()
+{
+char *str;
+cout<<"\nEnter string:";
+gets(str1);
+str=str1;
+cout<<"\nThe original string is: ";
+puts(str1);
+cout<<"\nThe duplicated string is: ";
+for(i=0;str1[i]!='\0';++i)
+{
+cout<<*str++;
+}
+getch();
+}
+//******************************
+void string_func::str_cmpi()
+{
+int flag;
+cout<<"\nEnter string 1:";
+gets(str1);
+cout<<"\nEnter string 2:";
+gets(str2);
+for(i=0;str1[i]!='\0';++i);
+for(j=0;str2[j]!='\0';++j);
+if(i==j)
+{
+for(i=0;str1[i]!='\0';++i)
+{
+if(toupper(str1[i])==toupper(str2[i]))
+{
+flag=1;
+}
+else
+{
+flag=0;
+break;
+}
+}
+if(flag==1)
+cout<<"\nStrings are equal!!";
+else
+cout<<"\nStrings are not equal!!";
+}
+else if(i>j)
+cout<<"\nStrings are not equal!!\nString 1 is larger..";
+else
+cout<<"\nStrings are not equal!!\nString 2 is larger..";
+getch();
+}
+//*************************************
+void string_func::str_ncpy()
+{
+int no,len;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nEnter places upto which you want to copy string:";
+cin>>no;
+for(i=0;str1[i]!='\0';++i);
+len=i;
+if(no<=len)
+{
+for(i=0;i<no;++i)
+{
+str2[i]=str1[i];
+}
+str2[i]='\0';
+cout<<"\nThe original string is:";
+puts(str1);
+cout<<"\nThe copied string is:";
+puts(str2);
+}
+else
+{
+cout<<"\nEnter valid length!!";
+}
+getch();
+}
+//************************
+void string_func::str_ncat()
+{
+int no;
+cout<<"\nEnter string 1:";
+gets(str1);
+cout<<"\nEnter string 2:";
+gets(str2);
+cout<<"\nEnter places upto which you want to concatenate string:";
+cin>>no;
+for(i=0;str1[i]!='\0';++i);
+for(j=0;j<no;++j)
+{
+str1[i]=str2[j];
+++i;
+}
+cout<<"\nAfter concatenation the string is ";
+puts(str1);
+getch();
+}
+//***********************************
+void string_func::str_rchr()
+{
+char c;
+int flag=0;
+int len;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nEnter character to be searched for:";
+cin>>c;
+for(i=0;str1[i]!='\0';++i);
+len=i-1;
+for(i=len;i>=0;--i)
+{
+if(str1[i]==c)
+{
+flag=1;
+break;
+}
+}
+if(flag==1)
+cout<<"\nCharacter last occurence in the string at position "<<i+1;
+else
+cout<<"\nCharacter not found in the string!!";
+getch();
+}
+//**************************************
+void string_func::str_nset()
+{
+char r;
+int no,len;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nEnter specific character:";
+cin>>r;
+cout<<"\nEnter number of places upto which you want to replace:";
+cin>>no;
+for(i=0;i<no;++i)
+{
+str1[i]=r;
+}
+cout<<"\nCharacter replaced!\n";
+cout<<"\nModified string is : ";
+puts(str1);
+getch();
+}
+//********************************
+void string_func::str_ncmp()
+{
+int flag,no;
+cout<<"\nEnter string 1:";
+gets(str1);
+cout<<"\nEnter string 2:";
+gets(str2);
+cout<<"\nEnter number of places upto which you want to compare:";
+cin>>no;
+for(i=0;i<no;++i)
+{
+if(str1[i]==str2[i])
+{
+flag=1;
+}
+else
+{
+flag=0;
+break;
+}
+}
+if(flag==1)
+cout<<"\nStrings are equal!!";
+else
+cout<<"\nStrings are not equal!!";
+getch();
+}
+//**********************
+void string_func::str_rstr()
+{
+int c=0,k=0;
+int len1,len2;
+cout<<"\nEnter string:";
+gets(str1);
+cout<<"\nEnter substring:";
+gets(str2);
+for(i=0;str1[i]!='\0';++i);
+for(j=0;str2[j]!='\0';++j);
+len1=i-1;
+len2=j-1;
+for(i=len1,j=len2;i>0,j>0;)
+{
+k++;
+if(str1[i]!=str2[j])
+{
+i--;
+}
+else
+{
+i--;
+j--;
+c++;
+}
+if(c==len2)
+break;
+}
+if(c==len2)
+cout<<"\nSubstring found at position "<<len1-k+1;
+else
+cout<<"\nSubstring not found!!";
+getch();
+}
+//*********************************
+void string_func::mem_cpy()
+{
+cout<<"\nEnter string:";
+gets(str1);
+for(i=0;i<(sizeof(str1));++i)
+{
+str2[i]=str1[i];
+}
+cout<<"\nOriginal string is: ";
+puts(str1);
+cout<<"\nCopied string is: ";
+puts(str2);
+getch();
+}
+//**********************************
