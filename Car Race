@@ -1,0 +1,98 @@
+#include<iostream.h>
+#include<conio.h>
+#include<process.h>
+class car_race
+{
+public:
+long id[20];
+int total;
+void input();
+void incre();
+void decre();
+}r;
+int k,ch,i,pos;
+long iden;
+void main()
+{
+clrscr();
+k=0;
+cout<<"\nEnter total number of cars in the race:";
+cin>>r.total;
+r.input();
+k=1;
+while(1)
+{
+cout<<"\nEnter your choice if any car enters or leaves the race:";
+cout<<"\n1.Car entry\n2.Car exit\n3.Exit\n";
+cout<<"\nChoice:";
+cin>>ch;
+switch(ch)
+{
+case 1:r.input();
+       r.incre();
+       break;
+case 2:cout<<"\nEnter identity Number of car which left:";
+       cin>>iden;
+       r.decre();
+       break;
+case 3:exit(0);
+default:cout<<"\nEnter a valid choice!!";
+	break;
+}
+}
+getch();
+}
+//**************************************
+void car_race::input()
+{
+if(k==0)
+{
+cout<<"\nEnter identity numbers of cars in the race:\n";
+for(i=0;i<r.total;++i)
+{
+cout<<"CAR "<<i+1<<":";
+cin>>r.id[i];
+}
+}
+else
+{
+r.total=r.total+1;
+cout<<"\nEnter identity number of car entered:";
+cin>>r.id[r.total-1];
+}
+}
+//************************************
+void car_race::incre()
+{
+cout<<"\nTotal number of cars present in the race:"<<r.total;
+cout<<"\nDetails are:\n";
+cout<<"\nSR.No\tIdentity No.\n";
+for(i=0;i<r.total;++i)
+{
+cout<<"CAR"<<i+1<<"\t"<<r.id[i]<<"\n";
+}
+}
+//*************************
+void car_race::decre()
+{
+for(i=0;i<r.total;++i)
+{
+if(r.id[i]==iden)
+{
+pos=i;
+break;
+}
+}
+for(i=pos;i<r.total;++i)
+{
+r.id[i]=r.id[i+1];
+}
+r.total=r.total-1;
+cout<<"\nTotal number of cars present in the race:"<<r.total;
+cout<<"\nDetails are:\n";
+cout<<"\nSR.No\tIdentity No.\n";
+for(i=0;i<r.total;++i)
+{
+cout<<"CAR"<<i+1<<"\t"<<r.id[i]<<"\n";
+}
+}
