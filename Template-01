@@ -1,0 +1,51 @@
+#include<iostream.h>
+#include<conio.h>
+template<class T>
+class large
+{
+T a[30];
+int n;
+public:
+//void large <int>::input()
+void input()
+{
+cout<<"\nEnter size of an array:";
+cin>>n;
+cout<<"\nEnter elements of an array:";
+for(int i=0;i<n;++i)
+cin>>a[i];
+}
+void show()
+{
+T max;
+max=a[0];
+for(int i=1;i<n;++i)
+{
+if(a[i]>max)
+max=a[i];
+}
+cout<<"\nMaximum element is"<<max;
+cout<<"\n**************\n";
+}
+};
+void main()
+{
+clrscr();
+cout<<"\nInteger data:";
+large<int>l1;
+l1.input();
+l1.show();
+cout<<"\nCharacter data:";
+large<char>l2;
+l2.input();
+l2.show();
+cout<<"\nFloating data:";
+large<float>l3;
+l3.input();
+l3.show();
+cout<<"\nLarge floating data:";
+large<double>l4;
+l4.input();
+l4.show();
+getch();
+}
