@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+static int m,n;
+class mat
+{
+int a[10][10];
+int i,j;
+public:
+void get();
+void display();
+mat operator+(mat);
+mat operator-(mat);
+};
+void mat::get()
+{
+cout<<"\nEnter matrix:\n";
+for(i=0;i<m;++i)
+{
+for(j=0;j<n;++j)
+{
+cin>>a[i][j];
+}
+}
+}
+mat mat::operator+(mat m1)
+{
+mat m2;
+for(i=0;i<m;++i)
+{
+for(j=0;j<n;++j)
+{
+m2.a[i][j]=a[i][j]+m1.a[i][j];
+}
+}
+return m2;
+}
+mat mat::operator-(mat m1)
+{
+mat m2;
+for(i=0;i<m;++i)
+{
+for(j=0;j<n;++j)
+{
+m2.a[i][j]=a[i][j]-m1.a[i][j];
+}
+}
+return m2;
+}
+void mat::display()
+{
+cout<<"\nMatrix is:\n";
+for(i=0;i<m;++i)
+{
+for(j=0;j<n;++j)
+{
+cout<<a[i][j]<<"\t";
+}
+cout<<"\n";
+}
+}
+void main()
+{
+clrscr();
+mat o1,o2,o3;
+cout<<"\nenter m:";cin>>m;
+cout<<"\nEnter n:";cin>>n;
+o1.get();
+o2.get();
+o1.display();
+o2.display();
+o3=o1+o2;
+cout<<"\nAddition is:\n";
+o3.display();
+o3=o1-o2;
+cout<<"\nSubtraction is:\n";
+o3.display();
+getch();
+}
