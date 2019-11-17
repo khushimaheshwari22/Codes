@@ -1,0 +1,209 @@
+#include<iostream.h>
+#include<conio.h>
+#include<process.h>
+class date
+{
+int m,dt,yr;
+public:
+void get();
+void get1();
+void display1();
+void display2();
+void display3();
+void operator++();
+void operator-(date);
+void operator+(date);
+void operator--();
+}d;
+//************************************
+void date::operator-(date e2)
+{
+date e3;
+e3.dt=dt-e2.dt;
+e3.m=m;
+e3.yr=yr;
+cout<<"\nThe difference of the date entered is"<<e3.dt<<" days";
+cout<<"\n**************************************************";
+}
+//*****************************
+void date::operator+(date e2)
+{
+date e3;
+e3.dt=dt+e2.dt;
+e3.m=m;
+e3.yr=yr;
+cout<<"\nThe date is:";
+cout<<e3.dt<<"|"<<e3.m<<"|"<<yr<<"\n";
+cout<<"\n**************************************************";
+}
+//*************************************
+void date::get1()
+{
+cout<<"\nEnter days to be added:";
+cin>>dt;
+m=0;
+yr=0;
+}
+//**********************************
+void date::get()
+{
+cout<<"\nEnter date day:";
+cin>>dt;
+cout<<"\nEnter date month:";
+cin>>m;
+cout<<"\nEnter date year(in 4 digit):";
+cin>>yr;
+cout<<"\n**************************************************\n";
+}
+//************************************
+void date::display1()
+{
+if((m>=1)||(m<=9))
+cout<<dt<<"|0"<<m<<"|"<<yr<<"\n";
+else
+cout<<dt<<"|"<<m<<"|"<<yr<<"\n";
+}
+//***********************************
+void date::display2()
+{
+cout<<dt<<" ";
+switch(m)
+{
+case 1:cout<<"January"<<" ";
+	break;
+case 2:cout<<"February"<<" ";
+	break;
+case 3:cout<<"March"<<" ";
+	break;
+case 4:cout<<"April"<<" ";
+	break;
+case 5:cout<<"May"<<" ";
+	break;
+case 6:cout<<"June"<<" ";
+	break;
+case 7:cout<<"July"<<" ";
+	break;
+case 8:cout<<"August"<<" ";
+	break;
+case 9:cout<<"September"<<" ";
+	break;
+case 10:cout<<"October"<<" ";
+	break;
+case 11:cout<<"November"<<" ";
+	break;
+case 12:cout<<"December"<<" ";
+	break;
+}
+cout<<yr<<"\n";
+}
+//************************************
+void date::display3()
+{
+
+switch(m)
+{
+case 1:cout<<"January"<<" ";
+	break;
+case 2:cout<<"February"<<" ";
+	break;
+case 3:cout<<"March"<<" ";
+	break;
+case 4:cout<<"April"<<" ";
+	break;
+case 5:cout<<"May"<<" ";
+	break;
+case 6:cout<<"June"<<" ";
+	break;
+case 7:cout<<"July"<<" ";
+	break;
+case 8:cout<<"August"<<" ";
+	break;
+case 9:cout<<"September"<<" ";
+	break;
+case 10:cout<<"October"<<" ";
+	break;
+case 11:cout<<"November"<<" ";
+	break;
+case 12:cout<<"December"<<" ";
+	break;
+}
+cout<<dt<<","<<yr<<"\n";
+cout<<"**************************************************";
+}
+//*************************************
+void date::operator++()
+{
+date e1;
+e1.dt=dt+1;
+e1.m=m;
+e1.yr=yr;
+cout<<"\nThe next date is:";
+if((e1.m>=1)||(e1.m<=9))
+cout<<e1.dt<<"|0"<<e1.m<<"|"<<e1.yr<<"\n";
+else
+cout<<e1.dt<<"|"<<e1.m<<"|"<<e1.yr<<"\n";
+cout<<"\n**************************************************";
+}
+//***************************************
+void date::operator--()
+{
+date e1;
+e1.dt=dt-1;
+e1.m=m;
+e1.yr=yr;
+cout<<"\nThe previous date is:";
+if((e1.m>=1)||(e1.m<=9))
+cout<<e1.dt<<"|0"<<e1.m<<"|"<<e1.yr<<"\n";
+else
+cout<<e1.dt<<"|"<<e1.m<<"|"<<e1.yr<<"\n";
+cout<<"\n**************************************************";
+}
+//*********************************************
+void main()
+{
+clrscr();
+date d1;
+date d2;
+date d3;
+int ch;
+while(1)
+{
+cout<<"\nOperations to be performed on dates are:\n";
+cout<<"\n1.Different formats\n2.preincrement\n3.predecrement\n4.add\n5.subtract\n6.exit";
+cout<<"\nEnter your choice:";
+cin>>ch;
+switch(ch)
+{
+case 1: d.get();
+	d.display1();
+	d.display2();
+	d.display3();
+	break;
+case 2:++d;
+	cout<<"\n******************************************";
+       break;
+case 3:--d;
+	cout<<"\n*******************************************";
+	break;
+case 4: cout<<"\nDate:\n";
+	d1.get();
+	d2.get1();
+	d1+d2;
+	cout<<"\n******************************************";
+	break;
+case 5: cout<<"\nDate 1:\n";
+	d1.get();
+	d1.display2();
+	cout<<"\nDate 2:\n";
+	d2.get();
+	d2.display2();
+	d2-d1;
+	cout<<"\n*******************************************";
+	break;
+case 6:exit(0);
+	break;
+}
+}
+getch();
+}
+//************************************************
