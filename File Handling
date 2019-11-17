@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+struct student
+{
+int id;
+char name[20],year[20],b[20];
+int m[5];
+};
+void main()
+{
+clrscr();
+int i;
+float sum=0.0;
+float pt;
+struct student s;
+FILE *fp;
+printf("Enter student record:\n");
+printf("\n ID:");
+scanf("%d",&s.id);
+printf("\n NAME:");
+scanf("%s",&s.name);
+printf("\n YEAR:");
+scanf("%s",&s.year);
+printf("\n BRANCH:");
+scanf("%s",&s.b);
+printf("\n MARKS IN 5 SUBJECTS:");
+printf("\n PHYSICS\tCHEMISTRY\tMATHS\tELECTRICAL\tMECHANICAL\n");
+for(i=0;i<5;++i)
+{
+scanf("%d",&s.m[i]);
+sum=sum+s.m[i];
+}
+pt=sum/5.0;
+fp=fopen("student_record.txt","w");
+fprintf(fp,"\n ID:%d",s.id);
+fprintf(fp,"\n NAME:%s",s.name);
+fprintf(fp,"\n YEAR:%s",s.year);
+fprintf(fp,"\n BRANCH:%s",s.b);
+fprintf(fp,"\n MARKS IN 5 SUBJECTS:");
+fprintf(fp,"\n PHYSICS\tCHEMISTRY\tMATHS\tELECTRICAL\tMECHANICAL\n");
+for(i=0;i<5;++i)
+{
+fprintf(fp,"%d",s.m[i]);
+}
+fprintf(fp,"\n PERCENTAGE:%f",pt);
+fclose(fp);
+fp=fopen("student_record.txt","r");
+fscanf(fp,"%d",s.id);
+fscanf(fp,"%s",s.name);
+fscanf(fp,"%s",s.year);
+fscanf(fp,"%s",s.b);
+for(i=0;i<5;++i)
+{
+fscanf(fp,"%d",s.m[i]);
+}
+fscanf(fp,"\n PERCENTAGE:%f",pt);
+fclose(fp);
+printf("STUDENT RECORD:\n");
+printf("\n ID:%d",s.id);
+printf("\n NAME:%s",s.name);
+printf("\n YEAR:%s",s.year);
+printf("\n BRANCH:%s",s.b);
+printf("\n MARKS IN 5 SUBJECTS:");
+printf("\n PHYSICS\tCHEMISTRY\tMATHS\tELECTRICAL\tMECHANICAL\n");
+for(i=0;i<5;++i)
+{
+printf("%d",s.m[i]);
+printf("\t\t");
+}
+printf("\n PERCENTAGE:%f",pt);
+}
+
