@@ -1,0 +1,46 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+int a[5][5],i,j,r,c,sum,sum1,b[50],p;
+int n=0;
+cout<<"\nEnter matrix row:";
+cin>>r;
+cout<<"\nEnter matrix column:";
+cin>>c;
+p=r*c;
+cout<<"\nEnter matrix elements:";
+for(i=0;i<r;++i)
+{
+for(j=0;j<c;++j)
+{
+cin>>a[i][j];
+b[n]=a[i][j];
+n=n+1;
+}
+}
+cout<<"\nMatrix is:\n";
+for(i=0;i<r;++i)
+{
+cout<<"\n";
+for(j=0;j<c;++j)
+{
+cout<<a[i][j]<<"\t";
+}
+}
+cout<<"\nEnter sum whose pair you want:";
+cin>>sum;
+for(i=0;i<p;++i)
+{
+for(j=i+1;j<p;++j)
+{
+if((b[i]+b[j])==sum)
+{
+cout<<b[i]<<","<<b[j]<<"\n";
+cout<<b[j]<<","<<b[i]<<"\n";
+}
+}
+}
+getch();
+}
