@@ -1,0 +1,72 @@
+#include<iostream.h>
+#include<process.h>
+#include<conio.h>
+class logic
+{
+int a;
+public:
+logic()
+{
+a=0;
+}
+void get();
+void operator||(logic);
+void operator&&(logic);
+void operator!();
+};
+void logic::operator||(logic l)
+{
+if(a||l.a)
+cout<<"\nValue is 1";
+else
+cout<<"\nValue is 0";
+}
+void logic::operator&&(logic l)
+{
+if(a && l.a)
+cout<<"\nValue is 1";
+else
+cout<<"\nValue is 0";
+}
+void logic::operator!()
+{
+if(a)
+cout<<"\nValue is 0";
+else
+cout<<"\nValue is 1";
+}
+void logic::get()
+{
+cout<<"\nEnter value:";
+cin>>a;
+}
+void main()
+{
+clrscr();
+int ch;
+logic o1,o2;
+cout<<"\nValue for object 1:";
+o1.get();
+cout<<"\nValue for object 2:";
+o2.get();
+while(1)
+{
+cout<<"\nLogical operators in the choice are:";
+cout<<"\n1.OR operator\n2.AND opeartor\n3.NOT operator(Only for object 1)\n4.Exit\n";
+cout<<"\nEnter your choice:";
+cin>>ch;
+switch(ch)
+{
+case 1: (o1||o2);
+	break;
+case 2: (o1&&o2);
+	break;
+case 3: (!o1);
+	(!o2);
+	break;
+case 4: exit(0);
+	break;
+}
+}
+getch();
+}
