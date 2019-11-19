@@ -1,0 +1,32 @@
+#include<iostream.h>
+#include<conio.h>
+class number
+{
+int x;
+public:
+number(int p)
+{
+x=p;
+}
+void *operator new(size_t size)
+{
+void *ptr=::new int[size];
+return ptr;
+}
+void operator delete(void *ptr)
+{
+::delete(ptr);
+}
+void display()
+{
+cout<<"\nx="<<x;
+}
+};
+void main()
+{
+clrscr();
+number *n=new number(20);
+n->display();
+delete n;
+getch();
+}
