@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<conio.h>
+struct employee
+{
+int id;
+char name[20];
+int sal;
+enum dept{sales=1,accounts,marketing,manager};
+enum dept d;
+}e[2];
+void main()
+{
+clrscr();
+int i;
+for(i=0;i<2;++i)
+{
+printf("enter employee id:");
+scanf("%d",&e[i].id);
+fflush(stdin);
+printf("\n enter name:");
+gets(e[i].name);
+printf("\n enter salary:");
+scanf("%d",&e[i].sal);
+fflush(stdin);
+printf("\n enter department:1.sales2.accounts3.marketing4.manager::");
+scanf("%d",&e[i].d);
+}
+printf("\n\tid\tname\tsalary\tdept\n");
+for(i=0;i<2;++i)
+{
+printf("%d\t",e[i].id);
+printf("%c\t",e[i].name);
+printf("%d\t",e[i].sal);
+printf("%d\t",e[i].d);
+printf("\n");
+}
+getch();
+}
