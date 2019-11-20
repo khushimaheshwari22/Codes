@@ -1,0 +1,29 @@
+#include<iostream.h>
+#include<conio.h>
+class A
+{
+protected:
+int a;
+};
+class B:protected A
+{
+int b;
+public:
+void in()
+{
+cout<<"\nEnter 2 numbers:";
+cin>>a>>b;
+}
+void out()
+{
+cout<<"\nThe number are:"<<a<<"\t"<<b;
+}
+};
+void main()
+{
+clrscr();
+B b1;
+b1.in();
+b1.out();
+getch();
+}
