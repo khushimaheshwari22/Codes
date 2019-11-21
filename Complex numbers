@@ -1,0 +1,56 @@
+#include<conio.h>
+#include<iostream.h>
+class com
+{
+int r;
+int i;
+public:
+com()
+{
+
+}
+com(int a)
+{
+r=a;
+i=a;
+}
+com(int a,int b)
+{
+r=a;
+i=b;
+}
+void print()
+{
+cout<<"\nThe sum is"<<r<<"+"<<i<<"i"<<"\n";
+}
+void get()
+{
+cout<<"\nEnter real part:";
+cin>>r;
+cout<<"\nEnter imaginary part:";
+cin>>i;
+}
+friend com sum(com ,com );
+};
+com sum(com c1,com c2)
+{
+com c3;
+c3.r=c1.r+c2.r;
+c3.i=c1.i+c2.i;
+return c3;
+}
+void main()
+{
+clrscr();
+int a,b,c;
+com o1;
+cout<<"\nFor equal values:";
+cout<<"\nEnter value:";cin>>a;
+com o2(a);
+cout<<"\nFor different values:";
+cout<<"\nEnter value:";cin>>b>>c;
+com o3(b,c);
+com o4=sum(o2,o3);
+o4.print();
+getch();
+}
