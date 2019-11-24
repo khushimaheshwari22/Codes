@@ -1,0 +1,119 @@
+#include<iostream.h>
+#include<process.h>
+#include<conio.h>
+class rel
+{
+int a;
+public:
+rel()
+{
+a=0;
+}
+void get();
+int operator>(rel);
+int operator<(rel);
+int operator>=(rel);
+int operator<=(rel);
+int operator==(rel);
+int operator!=(rel);
+};
+int rel::operator>(rel r)
+{
+if(a>r.a)
+return 1;
+else
+return 0;
+}
+int rel::operator<(rel r)
+{
+if(a<r.a)
+return 1;
+else
+return 0;
+}
+int rel::operator==(rel r)
+{
+if(a==r.a)
+return 1;
+else
+return 0;
+}
+int rel::operator!=(rel r)
+{
+if(a!=r.a)
+return 1;
+else
+return 0;
+}
+int rel::operator>=(rel r)
+{
+if(a>=r.a)
+return 1;
+else
+return 0;
+}
+int rel::operator<=(rel r)
+{
+if(a<=r.a)
+return 1;
+else
+return 0;
+}
+int rel::get()
+{
+cout<<"\nEnter value:";
+cin>>a;
+}
+void main()
+{
+clrscr();
+int ch;
+rel o1,o2;
+cout<<"\nValue for object 1:";
+o1.get();
+cout<<"\nValue for object 2:";
+o2.get();
+while(1)
+{
+cout<<"\nRelational operators in the choice are:";
+cout<<"\n1.<\n2.>\n3.==\n4.!=\n5.>=\n6.<=\n7.Exit\n";
+cout<<"\nEnter your choice:";
+cin>>ch;
+switch(ch)
+{
+case 1: if(o1<o2)
+	cout<<"\nTrue";
+	else
+	cout<<"\nFalse";
+	break;
+case 2: if(o1>o2)
+	cout<<"\nTrue";
+	else
+	cout<<"\nFalse";
+	break;
+case 3: if(o1==o2)
+	cout<<"\nTrue";
+	else
+	cout<<"\nFalse";
+	break;
+case 4: if(o1!=o2)
+	cout<<"\nTrue";
+	else
+	cout<<"\nFalse";
+	break;
+case 5: if(o1>=o2)
+	cout<<"\nTrue";
+	else
+	cout<<"\nFalse";
+	break;
+case 6: if(o1<=o2)
+	cout<<"\nTrue";
+	else
+	cout<<"\nFalse";
+	break;
+case 7: exit(0);
+	break;
+}
+}
+getch();
+}
