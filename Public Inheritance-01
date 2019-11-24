@@ -1,0 +1,59 @@
+#include<iostream.h>
+#include<conio.h>
+class A
+{
+int a;
+protected:
+int e;
+public:
+int c,d;
+void in()
+{
+cout<<"\nEnter a number:";
+cin>>a;
+}
+void out()
+{
+cout<<"\nThe number is:"<<a;
+}
+void mul()
+{
+int m;
+m=c*d*e;
+cout<<"\nThe product of entered number is:"<<m;
+}
+};
+class B:public A
+{
+int b;
+public:
+void in1()
+{
+cout<<"\nEnter another number:";
+cin>>b;
+}
+void out1()
+{
+cout<<"\nThe number is:"<<b;
+}
+void sum()
+{
+int s;
+cout<<"\nEnter 3 numbers for operation:";
+cin>>c>>d>>e;
+s=c+d+e;
+cout<<"\nThe sum of numbers is "<<s;
+mul();
+}
+};
+void main()
+{
+clrscr();
+B b1;
+b1.in();
+b1.in1();
+b1.out();
+b1.out1();
+b1.sum();
+getch();
+}
