@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+int rev(int);
+void main()
+{
+clrscr();
+int n;
+printf("enter no:");
+scanf("%d",&n);
+printf("\n reverse:%d",rev(n));
+getch();
+}
+int rev(int n)
+{
+int rem;
+static sum;
+if(n)
+{
+rem=n%10;
+sum=sum*10+rem;
+rev(n/10);
+}
+return sum;
+}
